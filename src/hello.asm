@@ -5,17 +5,15 @@ global _start
 
 
 section .rodata
-
-msg db "Hello World!", 0x0d, 0x0a
-msg_len equ $ - msg
+    msg db "Hello World!", 0x0d, 0x0a
+    msg_len equ $ - msg
 
 
 section .bss
-
-;; See https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block
-;; Required parameter that stores the result of the NtWriteFile syscall
-;; The 2nd quadword will contain the number of written bytes.
-iostatus resq 2
+    ;; See https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block
+    ;; Required parameter that stores the result of the NtWriteFile syscall
+    ;; The 2nd quadword will contain the number of written bytes.
+    iostatus resq 2
 
 
 section .text
