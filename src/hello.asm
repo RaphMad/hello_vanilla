@@ -37,8 +37,10 @@ _start:
     push 0
     push 0
     push msg_len
-    push msg
-    push iostatus
+    lea rax, [msg]
+    push rax
+    lea rax, [iostatus]
+    push rax
     ;; The following setup is the typical prelude for syscalls as they are performed by ntdll.dll
     ;; Syscall numbers can be found here https://github.com/j00ru/windows-syscalls
     mov r10, rcx  ;; The first parameter is copied to r10 for all syscalls
