@@ -58,9 +58,9 @@ _start:
     ;; This is the syscall performed by kernel32!ExitProcess
     mov rcx, rax  ;; Put first (and only) parameter in rcx (which is the result of the previous NtWriteFile syscall)
     mov r10, rax  ;; Follow ntdll syscall convention of copying first parameter also to r10
-    push rax      ;; Remember rax
+    mov rdx, rax  ;; Remember rax
     mov rax, 0x2C ;; rax holds the syscall number
     syscall
 
-    pop rax ;; Restore rax to have a "proper" return value (the one remembered from NtWriteFile)
+    mov rdx, rax  ;; Restore rax to have a "proper" return value (the one remembered from NtWriteFile)
     ret
