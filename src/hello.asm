@@ -51,7 +51,7 @@ _start:
     ;; rsp-relative addresses of extra args.
     sub rsp, 40
     syscall
-    add rsp, 80 ;; Restore stack pointer (undo "fake shadow space 32 + fake return address 8 + pushes 40")
+    add rsp, 32 ;; Shrink stack - note that we still have 48 bytes left (32 shadow space, 8 fake ret address, 8 align)
 
     ;; See https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess
     ;;
