@@ -62,5 +62,5 @@ _start:
     mov rax, 0x2C ;; rax holds the syscall number
     syscall
 
-    mov rdx, rax  ;; Restore rax to have a "proper" return value (the one remembered from NtWriteFile)
+    mov rax, rdx  ;; Restore rax to have a "proper" return value (the one remembered from NtWriteFile)
     ret
