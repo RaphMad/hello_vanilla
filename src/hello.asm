@@ -44,7 +44,7 @@ _start:
     mov r10, rcx  ;; The first parameter is copied to r10 for all syscalls
     mov rax, 0x08 ;; rax holds the syscall number (windows version and sometimes even build specific!)
     ;; Need to adjust the stack pointer because syscalls expect stack parameters at the "usual" locations
-    ;; based the x64 windows calling convention.
+    ;; based on the x64 windows calling convention including shadowspace.
     ;; (arg5 at rsp+40, arg6 at rsp+48 etc...)
     ;; Note that the stack is already aligned to 16 bytes.
     ;; If it wouldn't, the alignment needs to happen _before_ pushing the extra args to still ensure the consistent,
