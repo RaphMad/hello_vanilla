@@ -21,7 +21,7 @@ section .text
 _start:
     ;; See https://sites.google.com/site/x64lab/home/notes-on-x64-windows-gui-programming/exploring-peb-process-environment-block
     mov r10, [gs:60h]   ;; The pointer to the PEB for 64 bit applications is found at gs:60h
-    mov r10, [r10 + 32] ;; Within the PEB struct, the pointer to process parameters sits at offset 32
+    mov r10, [r10 + 32] ;; Within the PEB struct, the pointer to process parameters is at offset 32
     mov r10, [r10 + 40] ;; Within the RTL_USER_PROCESS_PARAMETERS struct, the output handle sits at offset 40
 
     ;; See https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile
