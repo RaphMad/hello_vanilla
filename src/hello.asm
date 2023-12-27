@@ -52,7 +52,7 @@ _start:
     ;; See https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwterminateprocess
     ;;
     ;; This is the syscall performed by kernel32!ExitProcess
-    mov r10, -1   ;; First parameter, -1 to terminate calling process
+    mov r10, -1   ;; First parameter, pass -1 to terminate calling process
     mov rdx, 0    ;; 2nd parameter, return value
     mov rax, 0x2C ;; rax holds the syscall number
     syscall
