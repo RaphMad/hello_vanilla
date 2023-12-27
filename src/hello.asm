@@ -41,7 +41,7 @@ _start:
     push rax
     ;; The following setup is the typical prelude for syscalls as they are performed by ntdll.dll
     ;; Syscall numbers can be found here https://github.com/j00ru/windows-syscalls
-    mov rax, 0x08 ;; rax holds the syscall number (windows version and sometimes even build specific!)
+    mov rax, 0x08 ;; rax holds the syscall number (windows version- and sometimes even build-specific!)
     ;; Need to adjust the stack pointer because syscalls expect stack parameters at the "usual" locations
     ;; based on the x64 windows calling convention including shadowspace and an assumed ret address.
     ;; (arg5 at rsp+40, arg6 at rsp+48 etc...)
