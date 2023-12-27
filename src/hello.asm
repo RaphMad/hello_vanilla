@@ -31,7 +31,7 @@ _start:
     xor rdx, rdx
     xor r8, r8
     xor r9, r9
-    ;; Push the remaining 5 parameters in reverse order, as per calling convention
+    ;; Push the 5 remaining parameters in reverse order, as per calling convention
     push 0
     push 0
     push msg_len
