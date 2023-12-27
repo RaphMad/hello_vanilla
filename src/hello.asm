@@ -47,7 +47,7 @@ _start:
     ;; (arg5 at rsp+40, arg6 at rsp+48 etc...)
     sub rsp, 40
     syscall
-    add rsp, 32 ;; Shrink stack - note that we still have 48 bytes left (32 shadow space, 8 fake ret address, 8 align)
+    add rsp, 32 ;; Shrink stack - note that there are still 48 bytes left (32 shadow space, 8 fake ret address, 8 align)
 
     ;; See https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwterminateprocess
     ;;
