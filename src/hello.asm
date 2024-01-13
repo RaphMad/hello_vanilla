@@ -54,5 +54,5 @@ _start:
     ;; This is the syscall performed by kernel32!ExitProcess
     mov r10, -1   ;; First parameter, pass -1 to terminate calling process
     mov rdx, 0    ;; 2nd parameter, return value 0 for success
-    mov rax, 0x2C ;; rax holds the syscall number
+    mov rax, 0x2C ;; rax holds syscall number
     syscall
